@@ -1,9 +1,9 @@
 
 /// 모든 동물의 공통 속성과 메서드
 public abstract class Animal {
-    private String name;        // 이름
-    private int age;            // 나이
-    private int hungry;    // 배고픔 수치
+    private final String name;  // 이름
+    private final int age;      // 나이
+    private int hungry;         // 배고픔 수치
     private int happiness;      // 행복도
 
     public String GetName() {

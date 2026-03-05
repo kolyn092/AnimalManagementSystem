@@ -1,4 +1,3 @@
-import java.io.FilterOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -38,6 +37,11 @@ public class Zoo {
 
     // 동물 목록 보기
     public static void ShowAnimalList() {
+        if (animalList.isEmpty()) {
+            System.out.println("등록된 동물이 없습니다.");
+            return;
+        }
+
         for (int i = 0; i < animalList.size(); i++) {
             var animal = animalList.get(i);
             System.out.println((i + 1) + ". " + animal.GetName() + " (" + animal.GetType() + ", " + animal.GetAge() + ")");

@@ -4,11 +4,13 @@ import java.util.Scanner;
 /// 프로그램 진입점 및 사용자 인터페이스
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         while (true) {
             try {
                 // 관리 시스템 메뉴 출력
                 System.out.println("""
-                        === 동물원 관리 시스템 ===);
+                        === 동물원 관리 시스템 ===
                         1. 동물 등록
                         2. 동물 목록 보기
                         3. 먹이주기
@@ -20,7 +22,6 @@ public class Main {
                 System.out.print("메뉴를 선택하세요: ");
 
                 // 메뉴 입력받기
-                Scanner scanner = new Scanner(System.in);
                 int selectMenu = scanner.nextInt();
 
                 switch (selectMenu) {
@@ -50,7 +51,8 @@ public class Main {
                         break;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("잘못된 메뉴 번호 입니다.");
+                System.out.println("숫자를 입력해주세요.");
+                scanner.nextLine(); // 버퍼 비우기
             }
         }
     }
