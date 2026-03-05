@@ -25,6 +25,7 @@ public class Main {
 
                 switch (selectMenu) {
                     case 1:
+                        Zoo.AnimalRegistration(scanner);
                         break;
                     case 2:
                         break;
