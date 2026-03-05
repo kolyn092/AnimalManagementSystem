@@ -40,6 +40,7 @@ public class Main {
                         Zoo.ListenSound(scanner);
                         break;
                     case 6:
+                        Zoo.CheckAnimalState(scanner);
                         break;
                     case 7:
                         System.out.println("동물원 관리 시스템을 종료합니다.");

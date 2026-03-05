@@ -107,4 +107,24 @@ public class Zoo {
         var targetAnimal = animalList.get(selectIndex - 1);
         targetAnimal.Sound();
     }
+
+    // 동물 상태 확인
+    public static void CheckAnimalState(Scanner scanner) {
+        // 동물 목록
+        ShowAnimalList();
+
+        // 입력
+        System.out.print("상태를 확인할 동물을 선택하세요: ");
+        int selectIndex = scanner.nextInt();
+
+        // 인덱스 벗어나는 경우 처리
+        if (selectIndex - 1 >= animalList.size() || selectIndex - 1 < 0) {
+            System.out.println("잘못된 번호입니다.");
+            return;
+        }
+
+        // 선택한 동물 정보 가져오기
+        var targetAnimal = animalList.get(selectIndex - 1);
+        System.out.println("배고픔: " + targetAnimal.GetHungry() + " 행복도: " + targetAnimal.GetHappiness());
+    }
 }

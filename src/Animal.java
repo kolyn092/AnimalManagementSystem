@@ -3,7 +3,7 @@
 public abstract class Animal {
     private String name;        // 이름
     private int age;            // 나이
-    private int hungryValue;    // 배고픔 수치
+    private int hungry;    // 배고픔 수치
     private int happiness;      // 행복도
 
     public String GetName() {
@@ -14,13 +14,21 @@ public abstract class Animal {
         return age;
     }
 
+    public int GetHungry() {
+        return hungry;
+    }
+
+    public int GetHappiness() {
+        return happiness;
+    }
+
     public abstract String GetType();   // 종류
     public abstract void Sound();       // 울음소리
 
     protected Animal(String name, int age) {
         this.name = name;
         this.age = age;
-        hungryValue = 50;   // 기본 세팅
+        hungry = 50;   // 기본 세팅
         happiness = 50;     // 기본 세팅
     }
 
@@ -34,9 +42,9 @@ public abstract class Animal {
 
     // 먹기 (배고픔 수치 감소)
     public int Eat() {
-        if (hungryValue - 1 >= 0) {
-            hungryValue -= 1;
+        if (hungry - 1 >= 0) {
+            hungry -= 1;
         }
-        return hungryValue;
+        return hungry;
     }
 }
