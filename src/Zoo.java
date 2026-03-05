@@ -49,7 +49,7 @@ public class Zoo {
     }
 
     // 동물 선택 함수
-    public static Animal SelectAnimal(Scanner scanner, String str) {
+    private static Animal SelectAnimal(Scanner scanner, String str) {
         // 동물 목록
         ShowAnimalList();
 
