@@ -34,6 +34,7 @@ public class Main {
                         Zoo.PlayWithAnimal(scanner);
                         break;
                     case 4:
+                        Zoo.FeedAnimal(scanner);
                         break;
                     case 5:
                         break;
