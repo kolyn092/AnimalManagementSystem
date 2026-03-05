@@ -31,6 +31,7 @@ public class Main {
                         Zoo.ShowAnimalList();
                         break;
                     case 3:
+                        Zoo.PlayWithAnimal(scanner);
                         break;
                     case 4:
                         break;

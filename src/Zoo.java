@@ -38,8 +38,31 @@ public class Zoo {
 
     // 동물 목록 보기
     public static void ShowAnimalList() {
-        for (var animal : animalList) {
-            System.out.println(animal.GetName() + " (" + animal.GetType() + ", " + animal.GetAge() + ")");
+        for (int i = 0; i < animalList.size(); i++) {
+            var animal = animalList.get(i);
+            System.out.println((i + 1) + ". " + animal.GetName() + " (" + animal.GetType() + ", " + animal.GetAge() + ")");
         }
+    }
+
+    // 동물과 놀기
+    public static void PlayWithAnimal(Scanner scanner) {
+        // 동물 목록
+        ShowAnimalList();
+
+        // 입력
+        System.out.print("놀아 줄 동물을 선택하세요: ");
+        int selectIndex = scanner.nextInt();
+
+        // 인덱스 벗어나는 경우 처리
+        if (selectIndex - 1 >= animalList.size() || selectIndex - 1 < 0) {
+            System.out.println("잘못된 번호입니다.");
+            return;
+        }
+
+        // 선택한 동물 정보 가져오기
+        var targetAnimal = animalList.get(selectIndex - 1);
+        var nowHappiness = targetAnimal.Play();
+
+        System.out.println(targetAnimal.GetName() + "와 놀기 - 행복도가 증가합니다. (" + nowHappiness + ")");
     }
 }
