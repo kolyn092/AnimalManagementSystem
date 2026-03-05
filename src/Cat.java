@@ -9,4 +9,8 @@ public class Cat extends Animal {
     public String GetType() {
         return "고양이";
     }
+
+    public void Sound() {
+        System.out.println(GetName() + ": 야옹~");
+    }
 }

@@ -11,10 +11,10 @@ public class Main {
                         === 동물원 관리 시스템 ===);
                         1. 동물 등록
                         2. 동물 목록 보기
-                        3. 동물과 놀기
-                        4. 먹이주기
-                        5. 동물 상태 확인
-                        6. 울음소리 듣기
+                        3. 먹이주기
+                        4. 놀아주기
+                        5. 울음소리 듣기
+                        6. 동물 상태 확인
                         7. 종료
                         """);
                 System.out.print("메뉴를 선택하세요: ");
@@ -31,12 +31,13 @@ public class Main {
                         Zoo.ShowAnimalList();
                         break;
                     case 3:
-                        Zoo.PlayWithAnimal(scanner);
-                        break;
-                    case 4:
                         Zoo.FeedAnimal(scanner);
                         break;
+                    case 4:
+                        Zoo.PlayWithAnimal(scanner);
+                        break;
                     case 5:
+                        Zoo.ListenSound(scanner);
                         break;
                     case 6:
                         break;

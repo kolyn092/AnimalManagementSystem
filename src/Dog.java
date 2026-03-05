@@ -9,4 +9,8 @@ public class Dog extends Animal {
     public String GetType() {
         return "강아지";
     }
+
+    public void Sound() {
+        System.out.println(GetName() + ": 멍멍!");
+    }
 }

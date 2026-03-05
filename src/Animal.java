@@ -14,7 +14,8 @@ public abstract class Animal {
         return age;
     }
 
-    public abstract String GetType();
+    public abstract String GetType();   // 종류
+    public abstract void Sound();       // 울음소리
 
     protected Animal(String name, int age) {
         this.name = name;
