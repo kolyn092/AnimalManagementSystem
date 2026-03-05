@@ -28,6 +28,7 @@ public class Main {
                         Zoo.AnimalRegistration(scanner);
                         break;
                     case 2:
+                        Zoo.ShowAnimalList();
                         break;
                     case 3:
                         break;

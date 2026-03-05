@@ -1,3 +1,4 @@
+import java.io.FilterOutputStream;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -6,6 +7,7 @@ import java.util.Scanner;
 public class Zoo {
     private static ArrayList<Animal> animalList = new ArrayList<>();
 
+    // 동물 등록 함수
     public static void AnimalRegistration(Scanner scanner) {
         try {
             System.out.print("동물 이름을 입력하세요: ");
@@ -30,6 +32,13 @@ public class Zoo {
 
         } catch (InputMismatchException e) {
             System.out.println("잘못된 입력 입니다.");
+        }
+    }
+
+    // 동물 목록 보기 함수
+    public static void ShowAnimalList() {
+        for (var animal : animalList) {
+            System.out.println(animal.GetName() + " (" + animal.GetType() + ", " + animal.GetAge() + ")");
         }
     }
 }
