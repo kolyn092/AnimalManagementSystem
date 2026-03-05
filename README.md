@@ -13,6 +13,6 @@
 
 ## 실행 방법
 ```bash
-javac Main.java
+javac *.java
 java Main
 ```
