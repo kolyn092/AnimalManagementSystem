@@ -13,6 +13,6 @@
 
 ## 실행 방법
 ```bash
-javac Zoo.java
-java Zoo
+javac Main.java
+java Main
 ```
