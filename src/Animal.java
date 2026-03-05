@@ -1,15 +1,10 @@
 
 /// 모든 동물의 공통 속성과 메서드
-public class Animal {
-
-    public enum AnimalType {
-        DOG,
-        CAT
-    }
-
+public abstract class Animal {
     private String name;        // 이름
     private int age;            // 나이
-    private AnimalType type;    // 종류
+    private int hungryValue;    // 배고픔 수치
+    private int happiness;      // 행복도
 
     public String GetName() {
         return name;
@@ -19,24 +14,10 @@ public class Animal {
         return age;
     }
 
-    public String GetType() {
-        String typeName;
-        switch (type) {
-            case DOG:
-                typeName = "강아지";
-                break;
-            case CAT:
-                typeName = "고양이";
-                break;
-            default:
-                typeName = "";
-        }
-        return typeName;
-    }
+    public abstract String GetType();
 
-    protected Animal(String name, int age, AnimalType type) {
+    protected Animal(String name, int age) {
         this.name = name;
         this.age = age;
-        this.type = type;
     }
 }

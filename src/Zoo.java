@@ -7,9 +7,10 @@ import java.util.Scanner;
 public class Zoo {
     private static ArrayList<Animal> animalList = new ArrayList<>();
 
-    // 동물 등록 함수
+    // 동물 등록
     public static void AnimalRegistration(Scanner scanner) {
         try {
+            // 입력
             System.out.print("동물 이름을 입력하세요: ");
             var name = scanner.next();
             System.out.print("동물 나이를 입력하세요: ");
@@ -17,7 +18,7 @@ public class Zoo {
             System.out.print("동물 종류를 선택하세요 (1.강아지 2.고양이): ");
             var type = scanner.nextInt();
 
-            // 동물 등록
+            // 종류에 따른 등록
             switch (type) {
                 case 1:
                     animalList.add(new Dog(name, age));
@@ -35,7 +36,7 @@ public class Zoo {
         }
     }
 
-    // 동물 목록 보기 함수
+    // 동물 목록 보기
     public static void ShowAnimalList() {
         for (var animal : animalList) {
             System.out.println(animal.GetName() + " (" + animal.GetType() + ", " + animal.GetAge() + ")");
