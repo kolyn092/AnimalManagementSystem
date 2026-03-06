@@ -1,8 +1,9 @@
 package species;
 
+import ability.Swimmable;
 import category.Reptile;
 
-public class Turtle extends Reptile {
+public class Turtle extends Reptile implements Swimmable {
 
     public Turtle(String name, int age) {
         super(name, age);
@@ -15,6 +16,11 @@ public class Turtle extends Reptile {
 
     @Override
     public void Sound() {
+
+    }
+
+    @Override
+    public void Swim() {
 
     }
 }

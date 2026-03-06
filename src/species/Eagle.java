@@ -1,8 +1,9 @@
 package species;
 
+import ability.Flyable;
 import category.Bird;
 
-public class Eagle extends Bird {
+public class Eagle extends Bird implements Flyable {
 
     public Eagle(String name, int age) {
         super(name, age);
@@ -15,6 +16,11 @@ public class Eagle extends Bird {
 
     @Override
     public void Sound() {
+
+    }
+
+    @Override
+    public void Fly() {
 
     }
 }

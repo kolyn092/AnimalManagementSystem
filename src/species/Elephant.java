@@ -1,8 +1,9 @@
 package species;
 
+import ability.Sprayable;
 import category.Mammal;
 
-public class Elephant extends Mammal {
+public class Elephant extends Mammal implements Sprayable {
 
     public Elephant(String name, int age) {
         super(name, age);
@@ -15,6 +16,11 @@ public class Elephant extends Mammal {
 
     @Override
     public void Sound() {
+
+    }
+
+    @Override
+    public void Spray() {
 
     }
 }
