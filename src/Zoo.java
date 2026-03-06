@@ -1,4 +1,3 @@
-import ability.Flyable;
 import base.Animal;
 import species.*;
 
@@ -8,7 +7,7 @@ import java.util.Scanner;
 
 /// 동물들을 관리하는 메인 클래스
 public class Zoo {
-    private static ArrayList<Animal> animalList = new ArrayList<>();
+    private static final ArrayList<Animal> animalList = new ArrayList<>();
 
     // 동물 등록
     public static void AnimalRegistration(Scanner scanner) {
@@ -71,14 +70,11 @@ public class Zoo {
         }
     }
 
-    // 현재 등록된 동물
+    // TODO : 현재 등록된 동물
     public static String ShowRegisterAnimal() {
         if (animalList.isEmpty()) {
             return "없음";
         }
-//        for (Animal animal : animalList) {
-//
-//        }
         return "구현중입니다";
     }
 
