@@ -15,6 +15,6 @@ public class Lion extends Mammal {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 크아앙");
     }
 }

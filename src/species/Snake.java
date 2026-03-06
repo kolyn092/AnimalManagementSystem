@@ -15,6 +15,6 @@ public class Snake extends Reptile {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 쉭..");
     }
 }

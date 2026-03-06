@@ -16,7 +16,7 @@ public class Elephant extends Mammal implements Sprayable {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 뿌우~");
     }
 
     @Override

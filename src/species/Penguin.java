@@ -16,7 +16,7 @@ public class Penguin extends Bird implements Swimmable {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 왝왝!");
     }
 
     @Override

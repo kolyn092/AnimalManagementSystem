@@ -16,7 +16,7 @@ public class Turtle extends Reptile implements Swimmable {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 거북거북..");
     }
 
     @Override

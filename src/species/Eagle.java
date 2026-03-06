@@ -16,7 +16,7 @@ public class Eagle extends Bird implements Flyable {
 
     @Override
     public void Sound() {
-
+        System.out.println(GetName() + ": 피융~");
     }
 
     @Override
