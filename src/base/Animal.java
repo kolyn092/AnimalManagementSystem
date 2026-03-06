@@ -87,7 +87,7 @@ public abstract class Animal {
     }
 
     // 배고픔 증감
-    protected void DecreaseHungry(int value) {
+    private void DecreaseHungry(int value) {
         // 증감
         hungry -= value;
 
