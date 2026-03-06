@@ -1,6 +1,5 @@
 import base.Animal;
-import species.Cat;
-import species.Dog;
+import species.*;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -18,7 +17,8 @@ public class Zoo {
             var name = scanner.next();
             System.out.print("동물 나이를 입력하세요: ");
             var age = scanner.nextInt();
-            System.out.print("동물 종류를 선택하세요 (1.강아지 2.고양이): ");
+            System.out.println("동물 종류를 선택하세요");
+            System.out.print("(1.강아지 2.고양이 3.독수리 4.코끼리 5.사자 6.펭귄 7.뱀 8.거북이): ");
             var type = scanner.nextInt();
 
             // 종류에 따른 등록
@@ -28,6 +28,24 @@ public class Zoo {
                     break;
                 case 2:
                     animalList.add(new Cat(name, age));
+                    break;
+                case 3:
+                    animalList.add(new Eagle(name, age));
+                    break;
+                case 4:
+                    animalList.add(new Elephant(name, age));
+                    break;
+                case 5:
+                    animalList.add(new Lion(name, age));
+                    break;
+                case 6:
+                    animalList.add(new Penguin(name, age));
+                    break;
+                case 7:
+                    animalList.add(new Snake(name, age));
+                    break;
+                case 8:
+                    animalList.add(new Turtle(name, age));
                     break;
                 default:
                     System.out.println("등록 실패");
