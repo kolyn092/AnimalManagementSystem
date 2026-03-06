@@ -16,9 +16,11 @@ public class Main {
                         2. 동물 목록 보기
                         3. 먹이주기
                         4. 놀아주기
-                        5. 특별 능력 사용
-                        6. 통계 보기
-                        7. 종료
+                        5. 울음소리 듣기
+                        6. 특별 능력 사용
+                        7. 동물 상태 확인
+                        8. 통계 보기
+                        9. 종료
                         """);
                 System.out.print("메뉴를 선택하세요: ");
 
@@ -26,25 +28,31 @@ public class Main {
                 int selectMenu = scanner.nextInt();
 
                 switch (selectMenu) {
-                    case 1:
+                    case 1: // 동물 등록
                         Zoo.AnimalRegistration(scanner);
                         break;
-                    case 2:
+                    case 2: // 동물 목록 보기
                         Zoo.ShowAnimalList();
                         break;
-                    case 3:
+                    case 3: // 먹이주기
                         Zoo.FeedAnimal(scanner);
                         break;
-                    case 4:
+                    case 4: // 놀아주기
                         Zoo.PlayWithAnimal(scanner);
                         break;
-                    case 5:
+                    case 5: // 울음소리 듣기
+                        Zoo.ListenSound(scanner);
+                        break;
+                    case 6: // 특별 능력 사용
                         Zoo.UseSpecialAbility(scanner);
                         break;
-                    case 6:
+                    case 7: // 동물 상태 확인
+                        Zoo.CheckAnimalState(scanner);
+                        break;
+                    case 8: // 통계 보기
                         Zoo.ShowStatistics();
                         break;
-                    case 7:
+                    case 9: // 종료
                         System.out.println("동물원 관리 시스템을 종료합니다.");
                         return;
                     default:
