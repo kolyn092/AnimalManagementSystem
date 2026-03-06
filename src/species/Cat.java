@@ -1,6 +1,9 @@
+package species;
 
-/// Animal을 상속받은 구체적인 동물 클래스 - Cat
-public class Cat extends Animal {
+import category.Mammal;
+
+/// Animal을 상속받은 구체적인 동물 클래스 - species.Cat
+public class Cat extends Mammal {
 
     public Cat(String name, int age) {
         super(name, age);

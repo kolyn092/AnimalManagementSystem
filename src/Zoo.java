@@ -1,3 +1,7 @@
+import base.Animal;
+import species.Cat;
+import species.Dog;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
