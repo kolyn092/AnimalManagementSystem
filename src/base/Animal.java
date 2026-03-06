@@ -72,9 +72,9 @@ public abstract class Animal {
         happiness += value;
 
         // 0보다 작거나 MAX_HAPPINESS 를 넘어가는 예외 처리
-        if (happiness + value > MAX_HAPPINESS) {
+        if (happiness > MAX_HAPPINESS) {
             happiness = MAX_HAPPINESS;
-        } else if (happiness + value < 0) {
+        } else if (happiness < 0) {
             happiness = 0;
         }
     }
