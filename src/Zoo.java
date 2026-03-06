@@ -117,11 +117,17 @@ public class Zoo {
             return;
         }
 
-        // 먹이주기
-        var nowHungry = targetAnimal.Eat();
+        // 먹이 선택
+        System.out.print("건네 줄 먹이를 선택하세요 (1.고기 2.생선 3.식물 4.견과류): ");
+        var selectIndex = scanner.nextInt();
+        var food = Animal.FoodType.ToInt(selectIndex);
+        if (food == null) {
+            System.out.println("잘못된 선택입니다.");
+            return;
+        }
 
-        // 결과 출력
-        System.out.println(targetAnimal.GetName() + "가 먹습니다 - 배고픔이 감소합니다. (" + nowHungry + ")");
+        // 먹이주기 및 결과 출력
+        targetAnimal.Eat(scanner, food);
     }
 
     // 울음소리 듣기

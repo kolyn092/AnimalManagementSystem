@@ -4,6 +4,7 @@ import ability.Flyable;
 import ability.Sprayable;
 import ability.Swimmable;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 /// 모든 동물의 공통 속성과 메서드
@@ -64,6 +65,7 @@ public abstract class Animal {
         this.age = age;
         hungry = 50;        // 기본 세팅
         happiness = 50;     // 기본 세팅
+        foodType = type;
     }
 
     // 행복도 증감 - 특별 능력 사용, 놀기
@@ -84,12 +86,50 @@ public abstract class Animal {
         IncreaseHappiness(10);
     }
 
-    // 먹기 (배고픔 수치 감소)
-    public int Eat() {
-        if (hungry - 1 >= 0) {
-            hungry -= 1;
+    // 배고픔 증감
+    protected void DecreaseHungry(int value) {
+        // 증감
+        hungry -= value;
+
+        // 0보다 작거나 MAX_HUNGRY 를 넘어가는 예외 처리
+        if (hungry > MAX_HUNGRY) {
+            hungry = MAX_HUNGRY;
+        } else if (hungry < 0) {
+            hungry = 0;
         }
-        return hungry;
+    }
+
+    // 먹기 (배고픔 수치 감소)
+    public void Eat(Scanner scanner, FoodType type) {
+        int hungry;
+        if (type == foodType) {
+            // 선호 먹이가 맞을 경우
+            DecreaseHungry(30);
+            System.out.println("선호 먹이를 먹은 " + GetName() + " 의 배고픔이 크게 감소합니다");
+        } else {
+            // 선호 먹이가 아닌 경우
+            System.out.print("선호하지 않는 음식입니다. 먹이시겠습니까?(y/n): ");
+
+            // 입력
+            String checkStr = scanner.next();
+            // 소문자 변환
+            checkStr = checkStr.toLowerCase();
+
+            // 입력 데이터 처리
+            if (checkStr.equals("y")) {
+                // 배고픔 증감
+                DecreaseHungry(2);
+                // 결과 출력
+                System.out.println(name + "가 선호하지 않아 배고픔이 조금 감소합니다.");
+            }
+            else if (checkStr.equals("n")) {
+                System.out.println("먹이를 주지 않았습니다.");
+                return;
+            }
+            else {
+                System.out.println("잘못된 입력입니다.");
+            }
+        }
     }
 
     // 특별 능력 사용
