@@ -88,7 +88,7 @@ public class Zoo {
         int animalCount = animalList.size();
         int happinessSum = 0;           // 행복도 합산
         Animal happiestAnimal = null;   // 가장 행복한 동물
-        ArrayList<Animal> hungryAmimalList = new ArrayList<>(); // 배고픈 동물 리스트
+        ArrayList<Animal> hungryAnimalList = new ArrayList<>(); // 배고픈 동물 리스트
 
         for (var animal : animalList) {
             // 행복도 합산
@@ -102,7 +102,7 @@ public class Zoo {
 
             // 배고픈 동물 (50 이상)
             if (animal.GetHungry() >= 50) {
-                hungryAmimalList.add(animal);
+                hungryAnimalList.add(animal);
             }
         }
 
@@ -114,13 +114,13 @@ public class Zoo {
         System.out.println("- 전체 동물 수: " + animalCount);
         System.out.println("- 평균 행복도: " + avgHappiness);
         System.out.print("- 배고픈 동물: ");
-        if (hungryAmimalList.isEmpty()) {
+        if (hungryAnimalList.isEmpty()) {
             System.out.print("없음");
         }
-        for (int i = 0; i < hungryAmimalList.size(); i++) {
-            var animal = hungryAmimalList.get(i);
+        for (int i = 0; i < hungryAnimalList.size(); i++) {
+            var animal = hungryAnimalList.get(i);
             System.out.print(animal.GetType() + "(" + animal.GetName() +")");
-            if (i < hungryAmimalList.size() - 1) {
+            if (i < hungryAnimalList.size() - 1) {
                 System.out.print(", ");
             }
         }

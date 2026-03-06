@@ -4,7 +4,6 @@ import ability.Flyable;
 import ability.Sprayable;
 import ability.Swimmable;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 /// 모든 동물의 공통 속성과 메서드
@@ -101,7 +100,6 @@ public abstract class Animal {
 
     // 먹기 (배고픔 수치 감소)
     public void Eat(Scanner scanner, FoodType type) {
-        int hungry;
         if (type == foodType) {
             // 선호 먹이가 맞을 경우
             DecreaseHungry(30);
@@ -124,7 +122,6 @@ public abstract class Animal {
             }
             else if (checkStr.equals("n")) {
                 System.out.println("먹이를 주지 않았습니다.");
-                return;
             }
             else {
                 System.out.println("잘못된 입력입니다.");
