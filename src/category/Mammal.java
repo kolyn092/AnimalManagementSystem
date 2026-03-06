@@ -9,7 +9,7 @@ public abstract class Mammal extends Animal {
         return "포유류";
     }
 
-    public Mammal(String name, int age, FoodType type) {
+    protected Mammal(String name, int age, FoodType type) {
         super(name, age, type);
     }
 }
