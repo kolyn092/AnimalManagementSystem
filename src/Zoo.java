@@ -118,6 +118,9 @@ public class Zoo {
         System.out.println("- 전체 동물 수: " + animalCount);
         System.out.println("- 평균 행복도: " + avgHappiness);
         System.out.print("- 배고픈 동물: ");
+        if (hungryAmimalList.isEmpty()) {
+            System.out.print("없음");
+        }
         for (int i = 0; i < hungryAmimalList.size(); i++) {
             var animal = hungryAmimalList.get(i);
             System.out.print(animal.GetType() + "(" + animal.GetName() +")");
