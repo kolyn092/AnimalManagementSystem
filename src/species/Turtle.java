@@ -21,6 +21,7 @@ public class Turtle extends Reptile implements Swimmable {
 
     @Override
     public void Swim() {
-
+        IncreaseHappiness(30);
+        System.out.println(GetName() + "가 수영을 합니다. 행복도가 크게 증가했습니다.");
     }
 }

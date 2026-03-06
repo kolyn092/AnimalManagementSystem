@@ -1,3 +1,4 @@
+import ability.Flyable;
 import base.Animal;
 import species.*;
 
@@ -100,10 +101,10 @@ public class Zoo {
         }
 
         // 놀아주기
-        var nowHappiness = targetAnimal.Play();
+        targetAnimal.Play();
 
         // 결과 출력
-        System.out.println(targetAnimal.GetName() + "와 놀기 - 행복도가 증가합니다. (" + nowHappiness + ")");
+        System.out.println(targetAnimal.GetName() + "와 놀기 - 행복도가 증가합니다.");
     }
 
     // 먹이주기
@@ -149,5 +150,19 @@ public class Zoo {
 
         // 상태 출력
         System.out.println("배고픔: " + targetAnimal.GetHungry() + " 행복도: " + targetAnimal.GetHappiness());
+    }
+
+    // 특별 능력 사용
+    public static void UseSpecialAbility(Scanner scanner) {
+        // 선택한 동물 정보 가져오기
+        var targetAnimal = SelectAnimal(scanner, "특별 능력을 사용할 ");
+
+        // 잘못된 번호를 선택해서 가져온 정보가 없을 경우
+        if (targetAnimal == null) {
+            return;
+        }
+
+        // 능력 사용
+        targetAnimal.UseSpecialAbility();
     }
 }

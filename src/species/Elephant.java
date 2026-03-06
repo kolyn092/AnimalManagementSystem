@@ -21,6 +21,7 @@ public class Elephant extends Mammal implements Sprayable {
 
     @Override
     public void Spray() {
-
+        IncreaseHappiness(30);
+        System.out.println(GetName() + "가 물을 뿌립니다! 행복도가 크게 증가했습니다.");
     }
 }

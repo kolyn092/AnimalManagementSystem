@@ -21,6 +21,7 @@ public class Eagle extends Bird implements Flyable {
 
     @Override
     public void Fly() {
-
+        IncreaseHappiness(30);
+        System.out.println(GetName() + "가 하늘 높이 날아올랐습니다! 행복도가 크게 증가했습니다.");
     }
 }

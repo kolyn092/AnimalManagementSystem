@@ -1,5 +1,9 @@
 package base;
 
+import ability.Flyable;
+import ability.Sprayable;
+import ability.Swimmable;
+
 import java.util.Scanner;
 
 /// 모든 동물의 공통 속성과 메서드
@@ -63,7 +67,7 @@ public abstract class Animal {
     }
 
     // 행복도 증감 - 특별 능력 사용, 놀기
-    protected int IncreaseHappiness(int value) {
+    protected void IncreaseHappiness(int value) {
         // 증감
         happiness += value;
 
@@ -73,13 +77,11 @@ public abstract class Animal {
         } else if (happiness + value < 0) {
             happiness = 0;
         }
-
-        return happiness;
     }
 
     // 놀기 (행복도 증가)
-    public int Play() {
-        return IncreaseHappiness(10);
+    public void Play() {
+        IncreaseHappiness(10);
     }
 
     // 먹기 (배고픔 수치 감소)
@@ -88,5 +90,25 @@ public abstract class Animal {
             hungry -= 1;
         }
         return hungry;
+    }
+
+    // 특별 능력 사용
+    public void UseSpecialAbility() {
+        if (this instanceof Flyable flyable) {
+            flyable.Fly();
+            return;
+        }
+
+        if (this instanceof Sprayable sprayable) {
+            sprayable.Spray();
+            return;
+        }
+
+        if (this instanceof Swimmable swimmable) {
+            swimmable.Swim();
+            return;
+        }
+
+        System.out.println("특별 능력이 없습니다.");
     }
 }

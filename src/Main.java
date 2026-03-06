@@ -15,7 +15,7 @@ public class Main {
                         2. 동물 목록 보기
                         3. 먹이주기
                         4. 놀아주기
-                        5. 울음소리 듣기
+                        5. 특별 능력 사용
                         6. 동물 상태 확인
                         7. 종료
                         """);
@@ -38,7 +38,7 @@ public class Main {
                         Zoo.PlayWithAnimal(scanner);
                         break;
                     case 5:
-                        Zoo.ListenSound(scanner);
+                        Zoo.UseSpecialAbility(scanner);
                         break;
                     case 6:
                         Zoo.CheckAnimalState(scanner);
