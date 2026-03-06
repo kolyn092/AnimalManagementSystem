@@ -71,6 +71,65 @@ public class Zoo {
         }
     }
 
+    // 현재 등록된 동물
+    public static String ShowRegisterAnimal() {
+        if (animalList.isEmpty()) {
+            return "없음";
+        }
+//        for (Animal animal : animalList) {
+//
+//        }
+        return "구현중입니다";
+    }
+
+    // 동물원 통계
+    public static void ShowStatistics() {
+        if (animalList.isEmpty()) {
+            System.out.println("등록된 동물이 없습니다.");
+            return;
+        }
+
+        int animalCount = animalList.size();
+        int happinessSum = 0;           // 행복도 합산
+        Animal happiestAnimal = null;   // 가장 행복한 동물
+        ArrayList<Animal> hungryAmimalList = new ArrayList<>(); // 배고픈 동물 리스트
+
+        for (var animal : animalList) {
+            // 행복도 합산
+            happinessSum += animal.GetHappiness();
+
+            // 가장 행복한 동물 저장
+            if (happiestAnimal == null
+                    || animal.GetHappiness() > happiestAnimal.GetHappiness()) {
+                happiestAnimal = animal;
+            }
+
+            // 배고픈 동물 (50 이상)
+            if (animal.GetHungry() >= 50) {
+                hungryAmimalList.add(animal);
+            }
+        }
+
+        // 행복도 평균 구하기
+        double avgHappiness = (double) happinessSum / animalCount;
+
+        // 출력
+        System.out.println("=== 동물원 통계 ===");
+        System.out.println("- 전체 동물 수: " + animalCount);
+        System.out.println("- 평균 행복도: " + avgHappiness);
+        System.out.print("- 배고픈 동물: ");
+        for (int i = 0; i < hungryAmimalList.size(); i++) {
+            var animal = hungryAmimalList.get(i);
+            System.out.print(animal.GetType() + "(" + animal.GetName() +")");
+            if (i < hungryAmimalList.size() - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+        System.out.println("- 가장 행복한 동물: "
+                + happiestAnimal.GetType() + "(" + happiestAnimal.GetName() + ") - 행복도 " + happiestAnimal.GetHappiness());
+    }
+
     // 동물 선택 함수
     private static Animal SelectAnimal(Scanner scanner, String str) {
         // 동물 목록

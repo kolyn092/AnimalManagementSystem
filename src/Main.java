@@ -9,14 +9,15 @@ public class Main {
         while (true) {
             try {
                 // 관리 시스템 메뉴 출력
+                System.out.println("=== 확장된 동물원 관리 시스템 ===");
+                System.out.println("현재 등록된 동물: " + Zoo.ShowRegisterAnimal());
                 System.out.println("""
-                        === 동물원 관리 시스템 ===
                         1. 동물 등록
                         2. 동물 목록 보기
                         3. 먹이주기
                         4. 놀아주기
                         5. 특별 능력 사용
-                        6. 동물 상태 확인
+                        6. 통계 보기
                         7. 종료
                         """);
                 System.out.print("메뉴를 선택하세요: ");
@@ -41,7 +42,7 @@ public class Main {
                         Zoo.UseSpecialAbility(scanner);
                         break;
                     case 6:
-                        Zoo.CheckAnimalState(scanner);
+                        Zoo.ShowStatistics();
                         break;
                     case 7:
                         System.out.println("동물원 관리 시스템을 종료합니다.");
