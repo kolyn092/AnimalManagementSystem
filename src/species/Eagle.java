@@ -6,7 +6,7 @@ import category.Bird;
 public class Eagle extends Bird implements Flyable {
 
     public Eagle(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.MEAT);
     }
 
     @Override

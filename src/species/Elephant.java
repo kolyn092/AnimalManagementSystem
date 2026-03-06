@@ -6,7 +6,7 @@ import category.Mammal;
 public class Elephant extends Mammal implements Sprayable {
 
     public Elephant(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.GRASS);
     }
 
     @Override

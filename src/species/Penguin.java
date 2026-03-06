@@ -6,7 +6,7 @@ import category.Bird;
 public class Penguin extends Bird implements Swimmable {
 
     public Penguin(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.FISH);
     }
 
     @Override

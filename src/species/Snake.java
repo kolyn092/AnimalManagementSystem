@@ -5,7 +5,7 @@ import category.Reptile;
 public class Snake extends Reptile {
 
     public Snake(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.MEAT);
     }
 
     @Override

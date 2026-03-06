@@ -6,7 +6,7 @@ import category.Reptile;
 public class Turtle extends Reptile implements Swimmable {
 
     public Turtle(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.GRASS);
     }
 
     @Override

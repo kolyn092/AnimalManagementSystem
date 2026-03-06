@@ -6,7 +6,7 @@ import category.Mammal;
 public class Dog extends Mammal {
 
     public Dog(String name, int age) {
-        super(name, age);
+        super(name, age, FoodType.MEAT);
     }
 
     @Override
