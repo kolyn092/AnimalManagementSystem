@@ -62,12 +62,24 @@ public abstract class Animal {
         happiness = 50;     // 기본 세팅
     }
 
+    // 행복도 증감 - 특별 능력 사용, 놀기
+    protected int IncreaseHappiness(int value) {
+        // 증감
+        happiness += value;
+
+        // 0보다 작거나 MAX_HAPPINESS 를 넘어가는 예외 처리
+        if (happiness + value > MAX_HAPPINESS) {
+            happiness = MAX_HAPPINESS;
+        } else if (happiness + value < 0) {
+            happiness = 0;
+        }
+
+        return happiness;
+    }
+
     // 놀기 (행복도 증가)
     public int Play() {
-        if (happiness + 1 <= 100) {
-            happiness += 1;
-        }
-        return happiness;
+        return IncreaseHappiness(10);
     }
 
     // 먹기 (배고픔 수치 감소)
